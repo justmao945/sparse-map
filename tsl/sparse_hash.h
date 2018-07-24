@@ -829,10 +829,11 @@ private:
     template<typename U>
     using has_mapped_type = typename std::integral_constant<bool, !std::is_same<U, void>::value>;
     
-    
+/*    
     static_assert(std::is_nothrow_move_constructible<ValueType>::value ||
                   std::is_copy_constructible<ValueType>::value, 
                   "Key, and T if present, must be nothrow move constructible and/or copy constructible.");
+*/
 
     static_assert(noexcept(std::declval<GrowthPolicy>().bucket_for_hash(std::size_t(0))), "GrowthPolicy::bucket_for_hash must be noexcept.");
     static_assert(noexcept(std::declval<GrowthPolicy>().clear()), "GrowthPolicy::clear must be noexcept.");
